@@ -17,6 +17,9 @@ const createMain = () => {
 
 const createFooter = () => {
   const footer = document.createElement('footer');
+  const footerInfo = document.createElement('p');
+  footerInfo.textContent = 'Created by miroslav-zarenkov';
+  footer.appendChild(footerInfo);
   return footer;
 };
 
