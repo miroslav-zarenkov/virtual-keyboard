@@ -35,8 +35,21 @@ export default class PageStructure {
     this.keyboard = document.createElement('div');
     this.keyboard.classList.add('main__keyboard');
     this.keyboard.classList.add('keyboard');
-    this.keyboard.textContent = 'qwertyuiop';
+    this.keyboard.appendChild(this.createButton('q'));
+    this.keyboard.appendChild(this.createButton('w'));
+    this.keyboard.appendChild(this.createButton('e'));
+    this.keyboard.appendChild(this.createButton('r'));
+    this.keyboard.appendChild(this.createButton('t'));
+    this.keyboard.appendChild(this.createButton('y'));
     return this.keyboard;
+  }
+
+  createButton(char) {
+    this.btn = document.createElement('button');
+    this.btn.classList.add('keyboard__btn');
+    this.btn.value = char;
+    this.btn.textContent = char;
+    return this.btn;
   }
 
   createFooter() {
