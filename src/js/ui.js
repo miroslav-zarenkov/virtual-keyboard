@@ -12,6 +12,12 @@ const createHeader = () => {
 
 const createPage = () => {
   document.body.appendChild(createHeader());
+  document.body.appendChild(createMain());
+};
+
+const createMain = () => {
+  const main = document.createElement('main');
+  return main;
 };
 
 const renderPage = (event) => {
