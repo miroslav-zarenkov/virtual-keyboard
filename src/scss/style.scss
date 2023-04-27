@@ -1,4 +1,5 @@
 @import "./normalize";
+@import "./base";
 @import "./variables";
 
 body {
@@ -7,14 +8,19 @@ body {
   height: 100vh;
 }
 
-header {
-  height: 20vh;
-}
-
 main {
-  height: 70vh;
+  height: 80vh;
 }
 
+header,
+main,
+footer {
+  width: 100%;
+}
+
+header,
 footer {
   height: 10vh;
+  background-color: $color-light-blue;
+  @include flex;
 }
