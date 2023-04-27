@@ -1,1 +1,3 @@
-console.log('Hello, World!');
+import { renderPage } from './ui';
+
+document.addEventListener('DOMContentLoaded', renderPage);
