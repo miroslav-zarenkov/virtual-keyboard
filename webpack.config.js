@@ -31,7 +31,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Virtual Keyboard',
-      favicon: '',
+      favicon: './src/icons/favicon.ico',
     }),
   ],
 };
