@@ -1,35 +1,41 @@
 import '../scss/style.scss';
 
-// eslint-disable-next-line no-use-before-define
-export default renderPage;
+export default class PageStructure {
+  constructor() {
+    this.header = this.createHeader();
+    this.main = this.createMain();
+    this.footer = this.createFooter();
+  }
 
-const createHeader = () => {
-  const header = document.createElement('header');
-  const headerTitle = document.createElement('h1');
-  headerTitle.textContent = 'Virtual Keyboard';
-  header.appendChild(headerTitle);
-  return header;
-};
+  createHeader() {
+    this.header = document.createElement('header');
+    const headerTitle = document.createElement('h1');
+    headerTitle.textContent = 'Virtual Keyboard';
+    this.header.appendChild(headerTitle);
+    return this.header;
+  }
 
-const createMain = () => {
-  const main = document.createElement('main');
-  return main;
-};
+  createMain() {
+    this.main = document.createElement('main');
+    return this.main;
+  }
 
-const createFooter = () => {
-  const footer = document.createElement('footer');
-  const footerInfo = document.createElement('p');
-  footerInfo.textContent = 'Created by miroslav-zarenkov';
-  footer.appendChild(footerInfo);
-  return footer;
-};
+  createFooter() {
+    this.footer = document.createElement('footer');
+    const footerInfo = document.createElement('p');
+    footerInfo.textContent = 'Created by miroslav-zarenkov';
+    this.footer.appendChild(footerInfo);
+    return this.footer;
+  }
 
-const createPage = () => {
-  document.body.appendChild(createHeader());
-  document.body.appendChild(createMain());
-  document.body.appendChild(createFooter());
-};
+  createPage() {
+    const body = document.querySelector('body');
+    body.appendChild(this.header);
+    body.appendChild(this.main);
+    body.appendChild(this.footer);
+  }
 
-function renderPage(event) {
-  createPage(event);
+  renderPage() {
+    this.createPage();
+  }
 }
