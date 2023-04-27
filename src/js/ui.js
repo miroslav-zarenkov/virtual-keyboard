@@ -1,4 +1,5 @@
 import '../scss/style.scss';
+import addCharToTextArea from './logic';
 
 export default class PageStructure {
   constructor() {
@@ -69,7 +70,13 @@ export default class PageStructure {
     body.appendChild(this.footer);
   }
 
+  initialiseEventListeners() {
+    this.keyboardBtns = document.querySelectorAll('.keyboard__btn');
+    this.keyboardBtns.forEach((btn) => btn.addEventListener('click', addCharToTextArea));
+  }
+
   renderPage() {
     this.createPage();
+    this.initialiseEventListeners();
   }
 }
