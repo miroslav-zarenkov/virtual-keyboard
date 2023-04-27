@@ -10,14 +10,20 @@ const createHeader = () => {
   return header;
 };
 
-const createPage = () => {
-  document.body.appendChild(createHeader());
-  document.body.appendChild(createMain());
-};
-
 const createMain = () => {
   const main = document.createElement('main');
   return main;
+};
+
+const createFooter = () => {
+  const footer = document.createElement('footer');
+  return footer;
+};
+
+const createPage = () => {
+  document.body.appendChild(createHeader());
+  document.body.appendChild(createMain());
+  document.body.appendChild(createFooter());
 };
 
 const renderPage = (event) => {
