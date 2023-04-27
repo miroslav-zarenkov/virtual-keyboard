@@ -1,6 +1,6 @@
 import '../scss/style.scss';
-
-export { renderPage };
+/* eslint-disable-next-line no-use-before-define */
+export default renderPage;
 
 const createHeader = () => {
   const header = document.createElement('header');

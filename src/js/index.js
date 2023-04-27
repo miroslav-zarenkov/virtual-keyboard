@@ -1,3 +1,3 @@
-import { renderPage } from './ui';
+import renderPage from './ui';
 
 document.addEventListener('DOMContentLoaded', renderPage);
