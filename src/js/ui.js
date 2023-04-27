@@ -1,5 +1,6 @@
 import '../scss/style.scss';
-/* eslint-disable-next-line no-use-before-define */
+
+// eslint-disable-next-line no-use-before-define
 export default renderPage;
 
 const createHeader = () => {
@@ -29,6 +30,6 @@ const createPage = () => {
   document.body.appendChild(createFooter());
 };
 
-const renderPage = (event) => {
+function renderPage(event) {
   createPage(event);
-};
+}
