@@ -17,7 +17,20 @@ export default class PageStructure {
 
   createMain() {
     this.main = document.createElement('main');
+    this.main.appendChild(this.createTextArea());
+    this.main.appendChild(this.createKeyboard());
     return this.main;
+  }
+
+  createTextArea() {
+    this.textArea = document.createElement('textarea');
+    return this.textArea;
+  }
+
+  createKeyboard() {
+    this.keyboard = document.createElement('div');
+    this.keyboard.textContent = 'qwertyuiop';
+    return this.keyboard;
   }
 
   createFooter() {
