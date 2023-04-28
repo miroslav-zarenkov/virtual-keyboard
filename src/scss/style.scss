@@ -35,7 +35,7 @@
 
 .keyboard {
   display: grid;
-  grid-template-rows: repeat(4, 60px) repeat(2, 22.5px);
+  grid-template-rows: repeat(4, 60px) repeat(2, 27.5px);
   grid-template-columns: repeat(15, 60px);
   gap: 5px;
   &__btn {
