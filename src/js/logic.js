@@ -3,6 +3,8 @@ import { newPage } from './ui';
 
 export default function addCharToTextArea() {
   const textArea = document.querySelector('textarea');
+  const cursorPosition = textArea.selectionStart;
+  console.log(cursorPosition)
   let char = "";
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
@@ -36,7 +38,11 @@ export default function addCharToTextArea() {
       }
     }
   }
-  textArea.textContent += char;
+  const beforeCursor = textArea.value.substring(0, cursorPosition);
+  const afterCursor = textArea.value.substring(cursorPosition);
+  textArea.value = beforeCursor + char + afterCursor;
   char = '';
+  const newCursorPosition = cursorPosition + 1;
+  textArea.setSelectionRange(newCursorPosition, newCursorPosition);
   textArea.focus();
 }
