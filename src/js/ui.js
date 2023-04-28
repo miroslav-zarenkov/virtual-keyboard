@@ -4,6 +4,7 @@ import addCharToTextArea from './logic';
 
 export default class PageStructure {
   constructor() {
+    this.enKeyboard = true;
     this.header = this.createHeader();
     this.main = this.createMain();
     this.footer = this.createFooter();
@@ -47,8 +48,17 @@ export default class PageStructure {
     this.btn = document.createElement('button');
     this.btn.classList.add(`keyboard__btn__${button.role}`);
     this.btn.value = button.keyCode;
-    this.btn.textContent = button.labelEn;
+    this.btn.textContent = this.enKeyboard ? button.labelEn : button.labelRu;
     return this.btn;
+  }
+
+  changeKeyboardLanguage() {
+    this.enKeyboard = !this.enKeyboard;
+    const main = document.querySelector('main');
+    const keyboard = document.querySelector('.keyboard');
+    main.removeChild(keyboard);
+    main.appendChild(this.createKeyboard());
+    this.initialiseEventListeners();
   }
 
   createFooter() {
@@ -72,6 +82,8 @@ export default class PageStructure {
     this.keyboardBlock = document.querySelector('.keyboard');
     this.keyboardBtns = this.keyboardBlock.querySelectorAll('button');
     this.keyboardBtns.forEach((btn) => btn.addEventListener('click', addCharToTextArea));
+    this.fnButton = document.querySelector('.keyboard__btn__fn');
+    this.fnButton.addEventListener('click', this.changeKeyboardLanguage.bind(this));
   }
 
   renderPage() {
