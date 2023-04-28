@@ -5,7 +5,7 @@
      "labelRu":">",
      "labelEnShift":"±",
      "labelRuShift":"<",
-     "keyCode":190,
+     "keyCode":192,
      "role":"character"
   },
   {
@@ -164,7 +164,7 @@
   {
      "id":"key-r",
      "labelEn":"r",
-     "labelRu":"е",
+     "labelRu":"к",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":82,
@@ -375,16 +375,7 @@
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":16,
-     "role":"shift-letf"
-  },
-  {
-     "id":"key-`",
-     "labelEn":"`",
-     "labelRu":"]",
-     "labelEnShift":"~",
-     "labelRuShift":"[",
-     "keyCode":221,
-     "role":"character"
+     "role":"shift-left"
   },
   {
      "id":"key-z",

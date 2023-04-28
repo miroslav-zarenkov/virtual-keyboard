@@ -2,7 +2,7 @@ import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
 import addCharToTextArea from './logic';
 
-export default class PageStructure {
+class PageStructure {
   constructor() {
     this.enKeyboard = true;
     this.header = this.createHeader();
@@ -90,4 +90,10 @@ export default class PageStructure {
     this.createPage();
     this.initialiseEventListeners();
   }
+
+  getLanguage() {
+    return this.enKeyboard;
+  }
 }
+// eslint-disable-next-line import/prefer-default-export
+export const newPage = new PageStructure();

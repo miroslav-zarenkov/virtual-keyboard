@@ -1,4 +1,3 @@
-import PageStructure from './ui';
+import { newPage } from './ui';
 
-const newPage = new PageStructure();
 document.addEventListener('DOMContentLoaded', newPage.renderPage());
