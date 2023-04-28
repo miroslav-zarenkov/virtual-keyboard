@@ -1,5 +1,6 @@
 import '../scss/style.scss';
-import { addCharToTextArea, keyboardObj } from './logic';
+import jsonBtns from '../json/buttons.json';
+import addCharToTextArea from './logic';
 
 export default class PageStructure {
   constructor() {
@@ -36,7 +37,7 @@ export default class PageStructure {
     this.keyboard = document.createElement('div');
     this.keyboard.classList.add('main__keyboard');
     this.keyboard.classList.add('keyboard');
-    keyboardObj.forEach((button) => {
+    jsonBtns.forEach((button) => {
       this.keyboard.appendChild(this.createButton(button));
     });
     return this.keyboard;
