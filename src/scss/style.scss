@@ -26,3 +26,7 @@ footer {
   background-color: $color-light-blue;
   @include flex;
 }
+
+.keyboard {
+  width: 600px;
+}
