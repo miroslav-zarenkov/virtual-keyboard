@@ -2,31 +2,40 @@
 @import "./base";
 @import "./variables";
 
-body {
+.body {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-main {
+.main {
   height: 80vh;
   @include flex;
   flex-direction: column;
+  gap: 50px;
+  &__textarea {
+    resize: none;
+    height: 200px;
+    width: 400px;
+  }
 }
 
-header,
-main,
-footer {
+.header,
+.main,
+.footer {
   width: 100%;
 }
 
-header,
-footer {
+.header,
+.footer {
   height: 10vh;
   background-color: $color-light-blue;
   @include flex;
 }
 
 .keyboard {
-  width: 600px;
+  display: grid;
+  grid-template-rows: repeat(5, 40px);
+  grid-template-columns: repeat(15, 40px);
+  gap: 10px;
 }
