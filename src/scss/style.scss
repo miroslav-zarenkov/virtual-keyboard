@@ -12,11 +12,11 @@
   height: 80vh;
   @include flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
   &__textarea {
     resize: none;
-    height: 200px;
-    width: 400px;
+    height: 250px;
+    width: 970px;
   }
 }
 
@@ -35,9 +35,9 @@
 
 .keyboard {
   display: grid;
-  grid-template-rows: repeat(5, 40px);
-  grid-template-columns: repeat(15, 40px);
-  gap: 10px;
+  grid-template-rows: repeat(4, 60px) repeat(2, 22.5px);
+  grid-template-columns: repeat(15, 60px);
+  gap: 5px;
   &__btn {
     &__backspace {
       grid-column-start: 14;
@@ -69,10 +69,70 @@
       grid-row-start: 4;
       grid-row-end: span 1;
     }
-    &__space {
-      grid-column-start: 4;
-      grid-column-end: span 5;
+    &__fn {
+      grid-column-start: 1;
+      grid-column-end: span 1;
       grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__control-left {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__option-left {
+      grid-column-start: 3;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__command-left {
+      grid-column-start: 4;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__space {
+      grid-column-start: 5;
+      grid-column-end: span 6;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__command-right {
+      grid-column-start: 11;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__option-right {
+      grid-column-start: 12;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__key-arrow-up {
+      grid-column-start: 14;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-left {
+      grid-column-start: 13;
+      grid-column-end: span 1;
+      grid-row-start: 6;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-down {
+      grid-column-start: 14;
+      grid-column-end: span 1;
+      grid-row-start: 6;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-right {
+      grid-column-start: 15;
+      grid-column-end: span 1;
+      grid-row-start: 6;
       grid-row-end: span 1;
     }
   }

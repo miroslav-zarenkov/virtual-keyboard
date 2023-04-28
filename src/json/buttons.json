@@ -351,8 +351,8 @@
      "role":"character"
   },
   {
-     "id":"key-\\'",
-     "labelEn":"\\'",
+     "id":"key-'",
+     "labelEn":"'",
      "labelRu":"э",
      "labelEnShift":"\"",
      "labelRuShift":null,
@@ -496,8 +496,8 @@
   },
   {
      "id":"key-control-left",
-     "labelEn":"Control",
-     "labelRu":"Control",
+     "labelEn":"ctrl",
+     "labelRu":"ctrl",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":17,
@@ -505,8 +505,8 @@
   },
   {
      "id":"key-option-left",
-     "labelEn":"Option",
-     "labelRu":"Option",
+     "labelEn":"opt",
+     "labelRu":"opt",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":18,
@@ -514,8 +514,8 @@
   },
   {
      "id":"key-command-left",
-     "labelEn":"Command",
-     "labelRu":"Command",
+     "labelEn":"cmd",
+     "labelRu":"cmd",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":91,
@@ -523,8 +523,8 @@
   },
   {
      "id":"key-space",
-     "labelEn":"Space",
-     "labelRu":"Space",
+     "labelEn":" ",
+     "labelRu":" ",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":32,
@@ -532,8 +532,8 @@
   },
   {
      "id":"key-command-right",
-     "labelEn":"Command",
-     "labelRu":"Command",
+     "labelEn":"cmd",
+     "labelRu":"cmd",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":93,
@@ -541,8 +541,8 @@
   },
   {
      "id":"key-option-right",
-     "labelEn":"Option",
-     "labelRu":"Option",
+     "labelEn":"opt",
+     "labelRu":"opt",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":18,
@@ -564,7 +564,7 @@
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":38,
-     "role":"key-arrow-right"
+     "role":"key-arrow-up"
   },
   {
      "id":"key-arrow-down",
