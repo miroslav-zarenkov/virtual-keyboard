@@ -13,6 +13,7 @@ const keyboardObj = [{
   labelEnShift: '±',
   labelRuShift: '<',
   keyCode: 190,
+  role: 'character',
 },
 {
   id: 'key-1',
@@ -21,6 +22,7 @@ const keyboardObj = [{
   labelEnShift: '!',
   labelRuShift: '!',
   keyCode: 49,
+  role: 'character',
 },
 {
   id: 'key-2',
@@ -29,6 +31,7 @@ const keyboardObj = [{
   labelEnShift: '@',
   labelRuShift: '@',
   keyCode: 50,
+  role: 'character',
 },
 {
   id: 'key-3',
@@ -37,6 +40,7 @@ const keyboardObj = [{
   labelEnShift: '#',
   labelRuShift: '#',
   keyCode: 51,
+  role: 'character',
 },
 {
   id: 'key-4',
@@ -45,6 +49,7 @@ const keyboardObj = [{
   labelEnShift: '$',
   labelRuShift: '$',
   keyCode: 52,
+  role: 'character',
 },
 {
   id: 'key-5',
@@ -53,6 +58,7 @@ const keyboardObj = [{
   labelEnShift: '%',
   labelRuShift: '%',
   keyCode: 53,
+  role: 'character',
 },
 {
   id: 'key-6',
@@ -61,6 +67,7 @@ const keyboardObj = [{
   labelEnShift: '^',
   labelRuShift: '^',
   keyCode: 54,
+  role: 'character',
 },
 {
   id: 'key-7',
@@ -69,6 +76,7 @@ const keyboardObj = [{
   labelEnShift: '&',
   labelRuShift: '&',
   keyCode: 55,
+  role: 'character',
 },
 {
   id: 'key-8',
@@ -77,6 +85,7 @@ const keyboardObj = [{
   labelEnShift: '*',
   labelRuShift: '*',
   keyCode: 56,
+  role: 'character',
 },
 {
   id: 'key-9',
@@ -85,6 +94,7 @@ const keyboardObj = [{
   labelEnShift: '(',
   labelRuShift: '(',
   keyCode: 57,
+  role: 'character',
 },
 {
   id: 'key-0',
@@ -93,6 +103,7 @@ const keyboardObj = [{
   labelEnShift: ')',
   labelRuShift: ')',
   keyCode: 48,
+  role: 'character',
 },
 {
   id: 'key--',
@@ -101,6 +112,7 @@ const keyboardObj = [{
   labelEnShift: '_',
   labelRuShift: '_',
   keyCode: 189,
+  role: 'character',
 },
 {
   id: 'key-+',
@@ -109,6 +121,7 @@ const keyboardObj = [{
   labelEnShift: '+',
   labelRuShift: '=',
   keyCode: 187,
+  role: 'character',
 },
 {
   id: 'key-backspace',
@@ -117,6 +130,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 8,
+  role: 'backspace',
 },
 {
   id: 'key-tab',
@@ -125,6 +139,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 9,
+  role: 'tab',
 },
 {
   id: 'key-q',
@@ -133,6 +148,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 81,
+  role: 'character',
 },
 {
   id: 'key-w',
@@ -141,6 +157,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 87,
+  role: 'character',
 },
 {
   id: 'key-e',
@@ -149,6 +166,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 69,
+  role: 'character',
 },
 {
   id: 'key-r',
@@ -157,6 +175,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 82,
+  role: 'character',
 },
 {
   id: 'key-t',
@@ -165,6 +184,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 84,
+  role: 'character',
 },
 {
   id: 'key-y',
@@ -173,6 +193,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 89,
+  role: 'character',
 },
 {
   id: 'key-u',
@@ -181,6 +202,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 85,
+  role: 'character',
 },
 {
   id: 'key-i',
@@ -189,6 +211,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 73,
+  role: 'character',
 },
 {
   id: 'key-o',
@@ -197,6 +220,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 79,
+  role: 'character',
 },
 {
   id: 'key-p',
@@ -205,6 +229,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 80,
+  role: 'character',
 },
 {
   id: 'key-[',
@@ -213,6 +238,7 @@ const keyboardObj = [{
   labelEnShift: '{',
   labelRuShift: null,
   keyCode: 219,
+  role: 'character',
 },
 {
   id: 'key-]',
@@ -221,6 +247,7 @@ const keyboardObj = [{
   labelEnShift: '}',
   labelRuShift: null,
   keyCode: 221,
+  role: 'character',
 },
 {
   id: 'key-enter',
@@ -229,6 +256,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 13,
+  role: 'enter',
 },
 {
   id: 'key-caps',
@@ -237,6 +265,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 20,
+  role: 'capslock',
 },
 {
   id: 'key-a',
@@ -245,6 +274,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 65,
+  role: 'character',
 },
 {
   id: 'key-s',
@@ -253,6 +283,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 83,
+  role: 'character',
 },
 {
   id: 'key-d',
@@ -261,6 +292,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 68,
+  role: 'character',
 },
 {
   id: 'key-f',
@@ -269,6 +301,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 70,
+  role: 'character',
 },
 {
   id: 'key-g',
@@ -277,6 +310,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 71,
+  role: 'character',
 },
 {
   id: 'key-h',
@@ -285,6 +319,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 72,
+  role: 'character',
 },
 {
   id: 'key-j',
@@ -293,6 +328,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 74,
+  role: 'character',
 },
 {
   id: 'key-k',
@@ -301,6 +337,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 75,
+  role: 'character',
 },
 {
   id: 'key-l',
@@ -309,6 +346,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 76,
+  role: 'character',
 },
 {
   id: 'key-;',
@@ -317,6 +355,7 @@ const keyboardObj = [{
   labelEnShift: ':',
   labelRuShift: null,
   keyCode: 186,
+  role: 'character',
 },
 {
   id: 'key-\'',
@@ -325,6 +364,7 @@ const keyboardObj = [{
   labelEnShift: '"',
   labelRuShift: null,
   keyCode: 222,
+  role: 'character',
 },
 {
   id: 'key-\\',
@@ -333,6 +373,7 @@ const keyboardObj = [{
   labelEnShift: '|',
   labelRuShift: null,
   keyCode: 220,
+  role: 'character',
 },
 {
   id: 'key-shift-left',
@@ -341,6 +382,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 16,
+  role: 'shift-letf',
 },
 {
   id: 'key-`',
@@ -349,6 +391,7 @@ const keyboardObj = [{
   labelEnShift: '~',
   labelRuShift: '[',
   keyCode: 221,
+  role: 'character',
 },
 {
   id: 'key-z',
@@ -357,6 +400,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 90,
+  role: 'character',
 },
 {
   id: 'key-x',
@@ -365,6 +409,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 88,
+  role: 'character',
 },
 {
   id: 'key-c',
@@ -373,6 +418,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 67,
+  role: 'character',
 },
 {
   id: 'key-v',
@@ -381,6 +427,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 86,
+  role: 'character',
 },
 {
   id: 'key-b',
@@ -389,6 +436,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 66,
+  role: 'character',
 },
 {
   id: 'key-n',
@@ -397,6 +445,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 78,
+  role: 'character',
 },
 {
   id: 'key-m',
@@ -405,6 +454,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 77,
+  role: 'character',
 },
 {
   id: 'key-,',
@@ -413,6 +463,7 @@ const keyboardObj = [{
   labelEnShift: '<',
   labelRuShift: null,
   keyCode: 188,
+  role: 'character',
 },
 {
   id: 'key-.',
@@ -421,6 +472,7 @@ const keyboardObj = [{
   labelEnShift: '>',
   labelRuShift: null,
   keyCode: 190,
+  role: 'character',
 },
 {
   id: 'key-/',
@@ -429,6 +481,7 @@ const keyboardObj = [{
   labelEnShift: '?',
   labelRuShift: '?',
   keyCode: 191,
+  role: 'character',
 },
 {
   id: 'key-shift-right',
@@ -437,6 +490,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 16,
+  role: 'shift-right',
 },
 {
   id: 'key-fn',
@@ -445,6 +499,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: null,
+  role: 'fn',
 },
 {
   id: 'key-control-left',
@@ -453,6 +508,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 17,
+  role: 'control-left',
 },
 {
   id: 'key-option-left',
@@ -461,6 +517,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 18,
+  role: 'option-left',
 },
 {
   id: 'key-command-left',
@@ -469,6 +526,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 91,
+  role: 'command-left',
 },
 {
   id: 'key-space',
@@ -477,6 +535,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 32,
+  role: 'space',
 },
 {
   id: 'key-command-right',
@@ -485,6 +544,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 93,
+  role: 'command-right',
 },
 {
   id: 'key-option-right',
@@ -493,6 +553,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 18,
+  role: 'option-right',
 },
 {
   id: 'key-arrow-left',
@@ -501,6 +562,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 37,
+  role: 'key-arrow-left',
 },
 {
   id: 'key-arrow-up',
@@ -509,6 +571,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 38,
+  role: 'key-arrow-right',
 },
 {
   id: 'key-arrow-down',
@@ -517,6 +580,7 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 40,
+  role: 'key-arrow-down',
 },
 {
   id: 'key-arrow-right',
@@ -525,5 +589,6 @@ const keyboardObj = [{
   labelEnShift: null,
   labelRuShift: null,
   keyCode: 39,
+  role: 'key-arrow-right',
 },
 ];

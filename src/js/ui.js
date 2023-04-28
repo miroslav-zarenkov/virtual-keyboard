@@ -44,7 +44,7 @@ export default class PageStructure {
 
   createButton(button) {
     this.btn = document.createElement('button');
-    this.btn.classList.add('keyboard__btn');
+    this.btn.classList.add(`keyboard__btn__${button.role}`);
     this.btn.value = button.keyCode;
     this.btn.textContent = button.labelEn;
     return this.btn;
@@ -68,7 +68,8 @@ export default class PageStructure {
   }
 
   initialiseEventListeners() {
-    this.keyboardBtns = document.querySelectorAll('.keyboard__btn');
+    this.keyboardBlock = document.querySelector('.keyboard');
+    this.keyboardBtns = this.keyboardBlock.querySelectorAll('button');
     this.keyboardBtns.forEach((btn) => btn.addEventListener('click', addCharToTextArea));
   }
 

@@ -38,4 +38,42 @@
   grid-template-rows: repeat(5, 40px);
   grid-template-columns: repeat(15, 40px);
   gap: 10px;
+  &__btn {
+    &__backspace {
+      grid-column-start: 14;
+      grid-column-end: span 2;
+      grid-row-start: 1;
+      grid-row-end: span 1;
+    }
+    &__tab {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 2;
+      grid-row-end: span 1;
+    }
+    &__enter {
+      grid-column-start: 15;
+      grid-column-end: span 1;
+      grid-row-start: 2;
+      grid-row-end: span 2;
+    }
+    &__capslock {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 3;
+      grid-row-end: span 1;
+    }
+    &__shift-right {
+      grid-column-start: 13;
+      grid-column-end: span 3;
+      grid-row-start: 4;
+      grid-row-end: span 1;
+    }
+    &__space {
+      grid-column-start: 4;
+      grid-column-end: span 5;
+      grid-row-start: 5;
+      grid-row-end: span 1;
+    }
+  }
 }
