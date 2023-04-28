@@ -4,7 +4,6 @@ import { newPage } from './ui';
 export default function addCharToTextArea() {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
-  console.log(cursorPosition)
   let char = "";
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
@@ -18,7 +17,6 @@ export default function addCharToTextArea() {
         } else {
           char = labelRu;
         }
-        
         break;
       }
     }else if (jsonBtns[i].role === 'space') {
@@ -34,6 +32,26 @@ export default function addCharToTextArea() {
     }else if (jsonBtns[i].role === 'tab'){
       if (jsonBtns[i].keyCode === buttonCode) {
         char = '\t';
+        break;
+      }
+    }else if (jsonBtns[i].role === 'key-arrow-up'){
+      if (jsonBtns[i].keyCode === buttonCode) {
+        char = "↑";
+        break;
+      }
+    }else if (jsonBtns[i].role === 'key-arrow-down'){
+      if (jsonBtns[i].keyCode === buttonCode) {
+        char = "↓";
+        break;
+      }
+    }else if (jsonBtns[i].role === 'key-arrow-right'){
+      if (jsonBtns[i].keyCode === buttonCode) {
+        char = "→";
+        break;
+      }
+    }else if (jsonBtns[i].role === 'key-arrow-left'){
+      if (jsonBtns[i].keyCode === buttonCode) {
+        char = "←";
         break;
       }
     }
