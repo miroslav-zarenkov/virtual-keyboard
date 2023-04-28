@@ -30,6 +30,7 @@ class PageStructure {
 
   createTextArea() {
     this.textArea = document.createElement('textarea');
+    this.textArea.setAttribute("autofocus", "");
     this.textArea.classList.add('main__textarea');
     return this.textArea;
   }

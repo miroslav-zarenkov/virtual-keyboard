@@ -5,7 +5,6 @@ export default function addCharToTextArea() {
   const textArea = document.querySelector('textarea');
   let char = "";
   const buttonCode = +this.value;
-  console.log(buttonCode)
   const language = newPage.getLanguage();
   for (let i = 0; i < jsonBtns.length; i++) {
     if (jsonBtns[i].role === 'character') {
@@ -17,6 +16,7 @@ export default function addCharToTextArea() {
         } else {
           char = labelRu;
         }
+        
         break;
       }
     }else if (jsonBtns[i].role === 'space') {
@@ -38,4 +38,5 @@ export default function addCharToTextArea() {
   }
   textArea.textContent += char;
   char = '';
+  textArea.focus();
 }

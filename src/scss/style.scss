@@ -17,6 +17,11 @@
     resize: none;
     height: 250px;
     width: 970px;
+    box-shadow: 0 0 10px $color-light-blue;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px $color-light-blue;
+    }
   }
 }
 
