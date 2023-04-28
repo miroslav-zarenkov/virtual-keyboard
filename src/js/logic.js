@@ -7,15 +7,25 @@ export default function addCharToTextArea() {
   let char = "";
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
+  const capsLock = newPage.getCapsLock();
+  console.log(capsLock+'atlogic')
   for (let i = 0; i < jsonBtns.length; i++) {
     if (jsonBtns[i].role === 'character') {
       if (jsonBtns[i].keyCode === buttonCode) {
         const { labelRu } = jsonBtns[i];
         const { labelEn } = jsonBtns[i];
         if (language) {
-          char = labelEn;
+          if(capsLock){
+            char = labelEn.toUpperCase();
+          }else{
+            char = labelEn;
+          }
         } else {
-          char = labelRu;
+          if(capsLock){
+            char = labelRu.toUpperCase();
+          }else{
+            char = labelRu;
+          }
         }
         break;
       }
@@ -59,7 +69,6 @@ export default function addCharToTextArea() {
   const beforeCursor = textArea.value.substring(0, cursorPosition);
   const afterCursor = textArea.value.substring(cursorPosition);
   textArea.value = beforeCursor + char + afterCursor;
-  char = '';
   const newCursorPosition = cursorPosition + 1;
   textArea.setSelectionRange(newCursorPosition, newCursorPosition);
   textArea.focus();

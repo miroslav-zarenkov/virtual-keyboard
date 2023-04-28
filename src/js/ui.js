@@ -5,6 +5,7 @@ import addCharToTextArea from './logic';
 class PageStructure {
   constructor() {
     this.enKeyboard = true;
+    this.capsKeyboard = false;
     this.header = this.createHeader();
     this.main = this.createMain();
     this.footer = this.createFooter();
@@ -62,6 +63,12 @@ class PageStructure {
     this.initialiseEventListeners();
   }
 
+  changeCapsLock() {
+    this.capsBtn = document.querySelector('.keyboard__btn__capslock');
+    this.capsKeyboard = !this.capsKeyboard;
+    this.capsBtn.classList.toggle("active");
+  }
+
   createFooter() {
     this.footer = document.createElement('footer');
     this.footer.classList.add('footer');
@@ -83,8 +90,10 @@ class PageStructure {
     this.keyboardBlock = document.querySelector('.keyboard');
     this.keyboardBtns = this.keyboardBlock.querySelectorAll('button');
     this.keyboardBtns.forEach((btn) => btn.addEventListener('click', addCharToTextArea));
-    this.fnButton = document.querySelector('.keyboard__btn__fn');
-    this.fnButton.addEventListener('click', this.changeKeyboardLanguage.bind(this));
+    this.fnBtn = document.querySelector('.keyboard__btn__fn');
+    this.fnBtn.addEventListener('click', this.changeKeyboardLanguage.bind(this));
+    this.capsBtn = document.querySelector('.keyboard__btn__capslock');
+    this.capsBtn.addEventListener('click', this.changeCapsLock.bind(this));
   }
 
   renderPage() {
@@ -94,6 +103,10 @@ class PageStructure {
 
   getLanguage() {
     return this.enKeyboard;
+  }
+
+  getCapsLock() {
+    return this.capsKeyboard;
   }
 }
 // eslint-disable-next-line import/prefer-default-export
