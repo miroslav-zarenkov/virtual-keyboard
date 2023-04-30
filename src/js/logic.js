@@ -1,4 +1,5 @@
 import jsonBtns from '../json/buttons.json';
+// eslint-disable-next-line import/no-cycle
 import { newPage } from './ui';
 
 export function addCharToTextArea() {

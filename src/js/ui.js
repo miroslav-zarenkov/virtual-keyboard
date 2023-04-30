@@ -1,5 +1,6 @@
 import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
+// eslint-disable-next-line import/no-cycle
 import { addCharToTextArea, backspace } from './logic';
 
 class PageStructure {
@@ -67,6 +68,18 @@ class PageStructure {
     this.capsBtn = document.querySelector('.keyboard__btn__capslock');
     this.capsKeyboard = !this.capsKeyboard;
     this.capsBtn.classList.toggle('active');
+    if (this.capsKeyboard) {
+      const allBtns = document.querySelectorAll('.keyboard__btn__character');
+      allBtns.forEach((btn) => {
+        btn.textContent = btn.textContent.toUpperCase();
+      });
+    }
+    if (!this.capsKeyboard) {
+      const allBtns = document.querySelectorAll('.keyboard__btn__character');
+      allBtns.forEach((btn) => {
+        btn.textContent = btn.textContent.toLowerCase();
+      });
+    }
   }
 
   createFooter() {
