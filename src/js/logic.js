@@ -4,15 +4,15 @@ import { newPage } from './ui';
 export function addCharToTextArea() {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
-  let char = "";
+  let char = '';
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
   const capsLock = newPage.getCapsLock();
-  if (this.value === '20' || this.value === '16' || this.value === 'null' 
-      || this.value === '17' || this.value === '18' || this.value === '91' 
+  if (this.value === '20' || this.value === '16' || this.value === 'null'
+      || this.value === '17' || this.value === '18' || this.value === '91'
       || this.value === '93' || this.value === '8') {
-        textArea.focus();
-        return;
+    textArea.focus();
+    return;
   }
   for (let i = 0; i < jsonBtns.length; i++) {
     if (jsonBtns[i].role === 'character') {
@@ -20,74 +20,51 @@ export function addCharToTextArea() {
         const { labelRu } = jsonBtns[i];
         const { labelEn } = jsonBtns[i];
         if (language) {
-          if(capsLock){
+          if (capsLock) {
             char = labelEn.toUpperCase();
-          }else{
+          } else {
             char = labelEn;
           }
+        } else if (capsLock) {
+          char = labelRu.toUpperCase();
         } else {
-          if(capsLock){
-            char = labelRu.toUpperCase();
-          }else{
-            char = labelRu;
-          }
+          char = labelRu;
         }
         break;
       }
-    }else if (jsonBtns[i].role === 'space') {
+    } else if (jsonBtns[i].role === 'space') {
       if (jsonBtns[i].keyCode === buttonCode) {
         char = ' ';
         break;
       }
-    }else if (jsonBtns[i].role === 'enter') {
+    } else if (jsonBtns[i].role === 'enter') {
       if (jsonBtns[i].keyCode === buttonCode) {
         char = '\n';
         break;
       }
-    }else if (jsonBtns[i].role === 'tab'){
+    } else if (jsonBtns[i].role === 'tab') {
       if (jsonBtns[i].keyCode === buttonCode) {
         char = '\t';
         break;
       }
-    }else if (jsonBtns[i].role === 'key-arrow-up'){
+    } else if (jsonBtns[i].role === 'key-arrow-up') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = "↑";
+        char = '↑';
         break;
       }
-    }else if (jsonBtns[i].role === 'key-arrow-down'){
+    } else if (jsonBtns[i].role === 'key-arrow-down') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = "↓";
+        char = '↓';
         break;
       }
-    }else if (jsonBtns[i].role === 'key-arrow-right'){
+    } else if (jsonBtns[i].role === 'key-arrow-right') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = "→";
+        char = '→';
         break;
       }
-    }else if (jsonBtns[i].role === 'key-arrow-left'){
+    } else if (jsonBtns[i].role === 'key-arrow-left') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = "←";
-        break;
-      }
-    }
-  }
-  const beforeCursor = textArea.value.substring(0, cursorPosition);
-  const afterCursor = textArea.value.substring(cursorPosition);
-  textArea.value = beforeCursor + char + afterCursor;
-  const newCursorPosition = cursorPosition + 1;
-  textArea.setSelectionRange(newCursorPosition, newCursorPosition);
-  textArea.focus();
-}
-
-export function space(){
-  const textArea = document.querySelector('textarea');
-  const cursorPosition = textArea.selectionStart;
-  let char = "";
-  const buttonCode = +this.value;
-  for (let i = 0; i < jsonBtns.length; i++) {
-    if (jsonBtns[i].role === 'space') {
-      if (jsonBtns[i].keyCode === buttonCode) {
-        char = ' ';
+        char = '←';
         break;
       }
     }
@@ -100,12 +77,12 @@ export function space(){
   textArea.focus();
 }
 
-export function backspace(){
+export function backspace() {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
   const beforeCursor = textArea.value.substring(0, cursorPosition);
   const afterCursor = textArea.value.substring(cursorPosition);
-  if (beforeCursor === "") {
+  if (beforeCursor === '') {
     textArea.focus();
     return;
   }

@@ -1,6 +1,6 @@
 import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
-import {addCharToTextArea, backspace, space} from './logic';
+import { addCharToTextArea, backspace } from './logic';
 
 class PageStructure {
   constructor() {
@@ -31,7 +31,7 @@ class PageStructure {
 
   createTextArea() {
     this.textArea = document.createElement('textarea');
-    this.textArea.setAttribute("autofocus", "");
+    this.textArea.setAttribute('autofocus', '');
     this.textArea.classList.add('main__textarea');
     return this.textArea;
   }
@@ -66,7 +66,7 @@ class PageStructure {
   changeCapsLock() {
     this.capsBtn = document.querySelector('.keyboard__btn__capslock');
     this.capsKeyboard = !this.capsKeyboard;
-    this.capsBtn.classList.toggle("active");
+    this.capsBtn.classList.toggle('active');
   }
 
   createFooter() {
@@ -94,9 +94,9 @@ class PageStructure {
     this.fnBtn.addEventListener('click', this.changeKeyboardLanguage.bind(this));
     this.capsBtn = document.querySelector('.keyboard__btn__capslock');
     this.capsBtn.addEventListener('click', this.changeCapsLock.bind(this));
-    this.backspaceBtn = document.querySelector(".keyboard__btn__backspace");
+    this.backspaceBtn = document.querySelector('.keyboard__btn__backspace');
     this.backspaceBtn.removeEventListener('click', addCharToTextArea);
-    this.backspaceBtn.addEventListener("click", backspace);
+    this.backspaceBtn.addEventListener('click', backspace);
   }
 
   renderPage() {
