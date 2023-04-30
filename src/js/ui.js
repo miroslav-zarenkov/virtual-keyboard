@@ -5,7 +5,7 @@ import { addCharToTextArea, backspace } from './logic';
 
 class PageStructure {
   constructor() {
-    this.enKeyboard = true;
+    this.enKeyboard = JSON.parse(localStorage.getItem('language')) || false;
     this.capsKeyboard = false;
     this.header = this.createHeader();
     this.main = this.createMain();
@@ -62,6 +62,7 @@ class PageStructure {
     main.removeChild(keyboard);
     main.appendChild(this.createKeyboard());
     this.initialiseEventListeners();
+    localStorage.setItem('language', JSON.stringify(this.getLanguage()));
   }
 
   changeCapsLock() {
