@@ -8,6 +8,12 @@ export function addCharToTextArea() {
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
   const capsLock = newPage.getCapsLock();
+  if (this.value === '20' || this.value === '16' || this.value === 'null' 
+      || this.value === '17' || this.value === '18' || this.value === '91' 
+      || this.value === '93' || this.value === '8') {
+        textArea.focus();
+        return;
+  }
   for (let i = 0; i < jsonBtns.length; i++) {
     if (jsonBtns[i].role === 'character') {
       if (jsonBtns[i].keyCode === buttonCode) {
@@ -61,6 +67,27 @@ export function addCharToTextArea() {
     }else if (jsonBtns[i].role === 'key-arrow-left'){
       if (jsonBtns[i].keyCode === buttonCode) {
         char = "←";
+        break;
+      }
+    }
+  }
+  const beforeCursor = textArea.value.substring(0, cursorPosition);
+  const afterCursor = textArea.value.substring(cursorPosition);
+  textArea.value = beforeCursor + char + afterCursor;
+  const newCursorPosition = cursorPosition + 1;
+  textArea.setSelectionRange(newCursorPosition, newCursorPosition);
+  textArea.focus();
+}
+
+export function space(){
+  const textArea = document.querySelector('textarea');
+  const cursorPosition = textArea.selectionStart;
+  let char = "";
+  const buttonCode = +this.value;
+  for (let i = 0; i < jsonBtns.length; i++) {
+    if (jsonBtns[i].role === 'space') {
+      if (jsonBtns[i].keyCode === buttonCode) {
+        char = ' ';
         break;
       }
     }
