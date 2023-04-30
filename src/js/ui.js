@@ -1,6 +1,6 @@
 import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
-import addCharToTextArea from './logic';
+import {addCharToTextArea, backspace} from './logic';
 
 class PageStructure {
   constructor() {
@@ -88,12 +88,14 @@ class PageStructure {
 
   initialiseEventListeners() {
     this.keyboardBlock = document.querySelector('.keyboard');
-    this.keyboardBtns = this.keyboardBlock.querySelectorAll('button');
+    this.keyboardBtns = this.keyboardBlock.querySelectorAll('.keyboard__btn__character');
     this.keyboardBtns.forEach((btn) => btn.addEventListener('click', addCharToTextArea));
     this.fnBtn = document.querySelector('.keyboard__btn__fn');
     this.fnBtn.addEventListener('click', this.changeKeyboardLanguage.bind(this));
     this.capsBtn = document.querySelector('.keyboard__btn__capslock');
     this.capsBtn.addEventListener('click', this.changeCapsLock.bind(this));
+    this.backspaceBtn = document.querySelector(".keyboard__btn__backspace");
+    this.backspaceBtn.addEventListener("click", backspace);
   }
 
   renderPage() {

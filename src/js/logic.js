@@ -1,14 +1,13 @@
 import jsonBtns from '../json/buttons.json';
 import { newPage } from './ui';
 
-export default function addCharToTextArea() {
+export function addCharToTextArea() {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
   let char = "";
   const buttonCode = +this.value;
   const language = newPage.getLanguage();
   const capsLock = newPage.getCapsLock();
-  console.log(capsLock+'atlogic')
   for (let i = 0; i < jsonBtns.length; i++) {
     if (jsonBtns[i].role === 'character') {
       if (jsonBtns[i].keyCode === buttonCode) {
@@ -70,6 +69,21 @@ export default function addCharToTextArea() {
   const afterCursor = textArea.value.substring(cursorPosition);
   textArea.value = beforeCursor + char + afterCursor;
   const newCursorPosition = cursorPosition + 1;
+  textArea.setSelectionRange(newCursorPosition, newCursorPosition);
+  textArea.focus();
+}
+
+export function backspace(){
+  const textArea = document.querySelector('textarea');
+  const cursorPosition = textArea.selectionStart;
+  const beforeCursor = textArea.value.substring(0, cursorPosition);
+  const afterCursor = textArea.value.substring(cursorPosition);
+  if (beforeCursor === "") {
+    textArea.focus();
+    return;
+  }
+  textArea.value = beforeCursor.slice(0, -1) + afterCursor;
+  const newCursorPosition = cursorPosition - 1;
   textArea.setSelectionRange(newCursorPosition, newCursorPosition);
   textArea.focus();
 }
