@@ -2,16 +2,17 @@ import jsonBtns from '../json/buttons.json';
 // eslint-disable-next-line import/no-cycle
 import { newPage } from './ui';
 
-export function addCharToTextArea() {
+export function addCharToTextArea(key = this.value) {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
   let char = '';
-  const buttonCode = +this.value;
+  // const buttonCode = +this.value;
+  const buttonCode = +key || +this.value;
   const language = newPage.getLanguage();
   const capsLock = newPage.getCapsLock();
-  if (this.value === '20' || this.value === '16' || this.value === 'null'
-      || this.value === '17' || this.value === '18' || this.value === '91'
-      || this.value === '93' || this.value === '8') {
+  if (buttonCode === 20 || buttonCode === 16 || buttonCode === null
+      || buttonCode === 17 || buttonCode === 18 || buttonCode === 91
+      || buttonCode === 93 || buttonCode === 8) {
     textArea.focus();
     return;
   }

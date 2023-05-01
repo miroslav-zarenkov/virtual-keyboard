@@ -111,11 +111,22 @@ class PageStructure {
     this.backspaceBtn = document.querySelector('.keyboard__btn__backspace');
     this.backspaceBtn.removeEventListener('click', addCharToTextArea);
     this.backspaceBtn.addEventListener('click', backspace);
+    // window.addEventListener('keydown', (e) => {
+    //   console.log(e.key);
+    // });
+  }
+
+  initialiseKeyboard() {
+    document.addEventListener('keydown', (event) => {
+      event.preventDefault();
+      addCharToTextArea(event.keyCode);
+    });
   }
 
   renderPage() {
     this.createPage();
     this.initialiseEventListeners();
+    this.initialiseKeyboard();
   }
 
   getLanguage() {
