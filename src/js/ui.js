@@ -124,6 +124,9 @@ class PageStructure {
       if (event.keyCode === 20) {
         this.changeCapsLock();
       }
+      if (event.keyCode === 8) {
+        backspace();
+      }
       addCharToTextArea(event.keyCode);
     });
     document.addEventListener('keyup', (event) => {
