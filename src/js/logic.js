@@ -6,7 +6,6 @@ export function addCharToTextArea(key = this.value) {
   const textArea = document.querySelector('textarea');
   const cursorPosition = textArea.selectionStart;
   let char = '';
-  // const buttonCode = +this.value;
   const buttonCode = +key || +this.value;
   const language = newPage.getLanguage();
   const capsLock = newPage.getCapsLock();

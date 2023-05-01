@@ -7,17 +7,28 @@
   flex-direction: column;
   height: 100vh;
 }
-
+.header {
+  font-family: "Caveat", "Courier New", Courier, monospace;
+  font-size: 24px;
+  height: 10vh;
+}
 .main {
-  height: 80vh;
+  height: 85vh;
   @include flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
+  background-color: darken($color-white, 7.5%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   &__textarea {
     resize: none;
-    height: 250px;
-    width: 970px;
+    padding: 5px;
+    height: 225px;
+    width: 990px;
     box-shadow: 0 0 10px $color-light-blue;
+    font-family: "Roboto", "Courier New", Courier, monospace;
+    font-size: 24px;
     &:focus {
       outline: none;
       box-shadow: 0 0 10px $color-light-blue;
@@ -33,15 +44,28 @@
 
 .header,
 .footer {
-  height: 10vh;
   background-color: $color-light-blue;
   @include flex;
+}
+.footer {
+  height: 5vh;
+  &__info {
+    font-family: "Nunito", "Courier New", Courier, monospace;
+  }
+}
+
+button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
 }
 
 .keyboard {
   display: grid;
   grid-template-rows: repeat(4, 60px) repeat(2, 27.5px);
   grid-template-columns: repeat(15, 60px);
+  padding: 10px;
+  border: solid 1px $color-black;
+  background-color: $color-light-gray;
   gap: 5px;
   &__btn {
     &__backspace {
@@ -151,15 +175,22 @@
 
 button {
   transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  color: $color-white;
+  background-color: lighten($color-black, 12.5%);
+  border: none;
+  cursor: pointer;
   &:active {
-    border: 2px solid green;
+    border: 2px solid $color-light-green;
     transform: translateY(3px);
     transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  }
+  &:hover {
+    background-color: lighten($color-black, 25%);
   }
 }
 
 .active {
-  border: 2px solid green;
+  border: 2px solid $color-light-green;
   transform: translateY(3px);
   transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
 }
