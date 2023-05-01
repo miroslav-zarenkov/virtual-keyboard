@@ -149,6 +149,17 @@
   }
 }
 
+button {
+  transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  &:active {
+    border: 2px solid green;
+    transform: translateY(3px);
+    transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  }
+}
+
 .active {
   border: 2px solid green;
+  transform: translateY(3px);
+  transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
 }

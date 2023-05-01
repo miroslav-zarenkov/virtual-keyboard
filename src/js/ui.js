@@ -115,6 +115,8 @@ class PageStructure {
     this.backspaceBtn = document.querySelector('.keyboard__btn__backspace');
     this.backspaceBtn.removeEventListener('click', addCharToTextArea);
     this.backspaceBtn.addEventListener('click', backspace);
+    // this.keyboardBtns.forEach((btn) => btn.addEventListener('', () =>
+    // btn.classList.toggle('active')));
     // window.addEventListener('keydown', (e) => {
     //   console.log(e.key);
     // });
