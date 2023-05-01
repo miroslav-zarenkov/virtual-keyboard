@@ -81,3 +81,89 @@ export function backspace() {
   textArea.setSelectionRange(newCursorPosition, newCursorPosition);
   textArea.focus();
 }
+
+export function shift() {
+  const language = newPage.getLanguage();
+  const allBtns = document.querySelectorAll('.keyboard__btn__character');
+  if (newPage.capsKeyboard && language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelEnShift === null) {
+        btn.textContent = btn.textContent.toLowerCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelEnShift}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelEnShift}`;
+      }
+    });
+  } else if (newPage.capsKeyboard && !language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelRuShift === null) {
+        btn.textContent = btn.textContent.toLowerCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelRuShift}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelRuShift}`;
+      }
+    });
+  } else if (!newPage.capsKeyboard && language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelEnShift === null) {
+        btn.textContent = btn.textContent.toUpperCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelEnShift}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelEnShift}`;
+      }
+    });
+  } else if (!newPage.capsKeyboard && !language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelRuShift === null) {
+        btn.textContent = btn.textContent.toUpperCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelRuShift}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelRuShift}`;
+      }
+    });
+  }
+  newPage.capsKeyboard = !newPage.capsKeyboard;
+}
+
+export function unshift() {
+  const language = newPage.getLanguage();
+  const allBtns = document.querySelectorAll('.keyboard__btn__character');
+  if (newPage.capsKeyboard && language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelEnShift === null) {
+        btn.textContent = btn.textContent.toLowerCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelEn}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelEn}`;
+      }
+    });
+  } else if (newPage.capsKeyboard && !language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelRuShift === null) {
+        btn.textContent = btn.textContent.toLowerCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelRu}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelRu}`;
+      }
+    });
+  } else if (!newPage.capsKeyboard && language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelEnShift === null) {
+        btn.textContent = btn.textContent.toUpperCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelEn}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelEn}`;
+      }
+    });
+  } else if (!newPage.capsKeyboard && !language) {
+    allBtns.forEach((btn) => {
+      if (jsonBtns[btn.dataset.order].labelRuShift === null) {
+        btn.textContent = btn.textContent.toUpperCase();
+      } else {
+        btn.textContent = `${jsonBtns[btn.dataset.order].labelRu}`;
+        btn.value = `${jsonBtns[btn.dataset.order].labelRu}`;
+      }
+    });
+  }
+  newPage.capsKeyboard = !newPage.capsKeyboard;
+}

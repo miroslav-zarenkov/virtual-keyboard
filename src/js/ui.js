@@ -1,7 +1,9 @@
 import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
 // eslint-disable-next-line import/no-cycle
-import { addCharToTextArea, backspace } from './logic';
+import {
+  addCharToTextArea, backspace, shift, unshift,
+} from './logic';
 
 class PageStructure {
   constructor() {
@@ -50,6 +52,7 @@ class PageStructure {
   createButton(button) {
     this.btn = document.createElement('button');
     this.btn.classList.add(`keyboard__btn__${button.role}`);
+    this.btn.setAttribute('data-order', `${button.order}`);
     this.btn.value = button.keyCode;
     this.btn.textContent = this.enKeyboard ? button.labelEn : button.labelRu;
     return this.btn;
@@ -118,9 +121,8 @@ class PageStructure {
 
   initialiseKeyboard() {
     document.addEventListener('keydown', (event) => {
-      console.log(event.keyCode);
+      // console.log(event.keyCode);
       event.preventDefault();
-      console.log(event.getModifierState('CapsLock'));
       if (event.keyCode === 20) {
         this.changeCapsLock();
       }
@@ -130,12 +132,18 @@ class PageStructure {
       if (event.altKey && event.ctrlKey) {
         this.changeKeyboardLanguage();
       }
+      if (event.keyCode === 16) {
+        shift();
+      }
       addCharToTextArea(event.keyCode);
     });
     document.addEventListener('keyup', (event) => {
       event.preventDefault();
       if (event.keyCode === 20) {
         this.changeCapsLock();
+      }
+      if (event.keyCode === 16) {
+        unshift();
       }
     });
   }
