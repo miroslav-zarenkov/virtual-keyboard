@@ -52,6 +52,7 @@ class PageStructure {
   createButton(button) {
     this.btn = document.createElement('button');
     this.btn.classList.add(`keyboard__btn__${button.role}`);
+    this.btn.classList.add(`${button.special}`);
     this.btn.setAttribute('data-order', `${button.order}`);
     this.btn.value = button.keyCode;
     this.btn.textContent = this.enKeyboard ? button.labelEn : button.labelRu;

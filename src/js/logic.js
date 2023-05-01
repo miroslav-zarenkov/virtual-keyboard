@@ -17,10 +17,29 @@ export function addCharToTextArea(key = this.value) {
     return;
   }
   for (let i = 0; i < jsonBtns.length; i++) {
-    if (jsonBtns[i].role === 'character') {
+    const { labelRu } = jsonBtns[i];
+    const { labelEn } = jsonBtns[i];
+    const { labelRuShift } = jsonBtns[i];
+    const { labelEnShift } = jsonBtns[i];
+    if (jsonBtns[i].special === 'shift') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        const { labelRu } = jsonBtns[i];
-        const { labelEn } = jsonBtns[i];
+        if (language && window.event.shiftKey) {
+          char = labelEnShift;
+        } else if (language && !window.event.shiftKey) {
+          char = labelEn;
+        } else if (!language && window.event.shiftKey) {
+          if (labelRuShift === null) {
+            char = labelRu.toUpperCase();
+          } else {
+            char = labelRuShift;
+          }
+        } else if (!language && !window.event.shiftKey) {
+          char = labelRu;
+        }
+        break;
+      }
+    } else if (jsonBtns[i].role === 'character') {
+      if (jsonBtns[i].keyCode === buttonCode) {
         if (language) {
           if (capsLock) {
             char = labelEn.toUpperCase();
@@ -50,9 +69,9 @@ export function addCharToTextArea(key = this.value) {
         break;
       }
     } else if (jsonBtns[i].role === 'key-arrow-up'
-              || jsonBtns[i].role === 'key-arrow-down'
-              || jsonBtns[i].role === 'key-arrow-right'
-              || jsonBtns[i].role === 'key-arrow-left') {
+                || jsonBtns[i].role === 'key-arrow-down'
+                || jsonBtns[i].role === 'key-arrow-right'
+                || jsonBtns[i].role === 'key-arrow-left') {
       if (jsonBtns[i].keyCode === buttonCode) {
         char = jsonBtns[i].labelEn;
         break;
@@ -102,7 +121,6 @@ export function shift() {
         btn.textContent = btn.textContent.toLowerCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelEnShift}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelEnShift}`;
       }
     });
   } else if (newPage.capsKeyboard && !language) {
@@ -111,7 +129,6 @@ export function shift() {
         btn.textContent = btn.textContent.toLowerCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelRuShift}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelRuShift}`;
       }
     });
   } else if (!newPage.capsKeyboard && language) {
@@ -120,7 +137,6 @@ export function shift() {
         btn.textContent = btn.textContent.toUpperCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelEnShift}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelEnShift}`;
       }
     });
   } else if (!newPage.capsKeyboard && !language) {
@@ -129,7 +145,6 @@ export function shift() {
         btn.textContent = btn.textContent.toUpperCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelRuShift}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelRuShift}`;
       }
     });
   }
@@ -145,7 +160,6 @@ export function unshift() {
         btn.textContent = btn.textContent.toLowerCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelEn}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelEn}`;
       }
     });
   } else if (newPage.capsKeyboard && !language) {
@@ -154,7 +168,6 @@ export function unshift() {
         btn.textContent = btn.textContent.toLowerCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelRu}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelRu}`;
       }
     });
   } else if (!newPage.capsKeyboard && language) {
@@ -163,7 +176,6 @@ export function unshift() {
         btn.textContent = btn.textContent.toUpperCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelEn}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelEn}`;
       }
     });
   } else if (!newPage.capsKeyboard && !language) {
@@ -172,7 +184,6 @@ export function unshift() {
         btn.textContent = btn.textContent.toUpperCase();
       } else {
         btn.textContent = `${jsonBtns[btn.dataset.order].labelRu}`;
-        btn.value = `${jsonBtns[btn.dataset.order].labelRu}`;
       }
     });
   }
