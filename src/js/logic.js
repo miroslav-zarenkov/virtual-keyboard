@@ -1,6 +1,5 @@
 import jsonBtns from '../json/buttons.json';
-// eslint-disable-next-line import/no-cycle
-import { newPage } from './ui';
+import newPage from './ui';
 
 export function addCharToTextArea(key = this.value) {
   const textArea = document.querySelector('textarea');
@@ -188,3 +187,4 @@ export function unshift() {
   }
   newPage.capsKeyboard = !newPage.capsKeyboard;
 }
+// TODO: refactor to class

@@ -1,6 +1,5 @@
 import '../scss/style.scss';
 import jsonBtns from '../json/buttons.json';
-// eslint-disable-next-line import/no-cycle
 import {
   addCharToTextArea, backspace, shift, unshift,
 } from './logic';
@@ -29,6 +28,7 @@ class PageStructure {
     this.main.classList.add('main');
     this.main.appendChild(this.createTextArea());
     this.main.appendChild(this.createKeyboard());
+    this.main.appendChild(this.createInfoBlock());
     return this.main;
   }
 
@@ -49,6 +49,16 @@ class PageStructure {
     return this.keyboard;
   }
 
+  createInfoBlock() {
+    this.infoBlock = document.createElement('div');
+    this.infoBlock.classList.add('main__info-block');
+    this.infoBlockParagraph = document.createElement('p');
+    this.infoBlockParagraph.classList.add('info-block__text');
+    this.infoBlockParagraph.textContent = 'This keyboard is based on keyboard of MacBook Air. To change language press \'fn\' button on virtual keyboard, or press alt key and ctrl key on your real keyboard at the same time.';
+    this.infoBlock.appendChild(this.infoBlockParagraph);
+    return this.infoBlock;
+  }
+
   createButton(button) {
     this.btn = document.createElement('button');
     this.btn.classList.add(`keyboard__btn__${button.role}`);
@@ -63,8 +73,11 @@ class PageStructure {
     this.enKeyboard = !this.enKeyboard;
     const main = document.querySelector('main');
     const keyboard = document.querySelector('.keyboard');
+    const info = document.querySelector('.main__info-block');
     main.removeChild(keyboard);
+    main.removeChild(info);
     main.appendChild(this.createKeyboard());
+    main.appendChild(this.createInfoBlock());
     this.initialiseEventListeners();
     localStorage.setItem('language', JSON.stringify(this.getLanguage()));
   }
@@ -117,9 +130,24 @@ class PageStructure {
     this.backspaceBtn.addEventListener('click', backspace);
   }
 
+  addKeyboardState(event) {
+    this.buttons = document.querySelectorAll(`button[value="${event.keyCode}"]`);
+    this.buttons.forEach((button) => {
+      button.classList.add('active');
+    });
+  }
+
+  removeKeyboardState(event) {
+    this.buttons = document.querySelectorAll(`button[value="${event.keyCode}"]`);
+    this.buttons.forEach((button) => {
+      button.classList.remove('active');
+    });
+  }
+
   initialiseKeyboard() {
     document.addEventListener('keydown', (event) => {
       event.preventDefault();
+      this.addKeyboardState(event);
       if (event.keyCode === 20) {
         this.changeCapsLock();
       }
@@ -136,6 +164,7 @@ class PageStructure {
     });
     document.addEventListener('keyup', (event) => {
       event.preventDefault();
+      this.removeKeyboardState(event);
       if (event.keyCode === 20) {
         this.changeCapsLock();
       }
@@ -159,5 +188,5 @@ class PageStructure {
     return this.capsKeyboard;
   }
 }
-// eslint-disable-next-line import/prefer-default-export
-export const newPage = new PageStructure();
+const newPage = new PageStructure();
+export default newPage;

@@ -16,7 +16,7 @@
   height: 85vh;
   @include flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   background-color: darken($color-white, 7.5%);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -24,8 +24,9 @@
   &__textarea {
     resize: none;
     padding: 5px;
-    height: 225px;
-    width: 990px;
+    height: 200px;
+    width: 980px;
+    letter-spacing: 2px;
     box-shadow: 0 0 10px $color-light-blue;
     font-family: "Roboto", "Courier New", Courier, monospace;
     font-size: 24px;
@@ -193,4 +194,10 @@ button {
   border: 2px solid $color-light-green;
   transform: translateY(3px);
   transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+}
+
+.main__info-block {
+  width: 900px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
