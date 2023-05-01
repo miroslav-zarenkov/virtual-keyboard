@@ -541,8 +541,8 @@
   },
   {
      "id":"key-arrow-left",
-     "labelEn":"←",
-     "labelRu":"←",
+     "labelEn":"◄",
+     "labelRu":"◄",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":37,
@@ -550,8 +550,8 @@
   },
   {
      "id":"key-arrow-up",
-     "labelEn":"↑",
-     "labelRu":"↑",
+     "labelEn":"▲",
+     "labelRu":"▲",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":38,
@@ -559,8 +559,8 @@
   },
   {
      "id":"key-arrow-down",
-     "labelEn":"↓",
-     "labelRu":"↓",
+     "labelEn":"▼",
+     "labelRu":"▼",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":40,
@@ -568,8 +568,8 @@
   },
   {
      "id":"key-arrow-right",
-     "labelEn":"→",
-     "labelRu":"→",
+     "labelEn":"►",
+     "labelRu":"►",
      "labelEnShift":null,
      "labelRuShift":null,
      "keyCode":39,

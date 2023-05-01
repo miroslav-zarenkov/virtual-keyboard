@@ -51,22 +51,22 @@ export function addCharToTextArea(key = this.value) {
       }
     } else if (jsonBtns[i].role === 'key-arrow-up') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = '↑';
+        char = jsonBtns[i].labelEn;
         break;
       }
     } else if (jsonBtns[i].role === 'key-arrow-down') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = '↓';
+        char = jsonBtns[i].labelEn;
         break;
       }
     } else if (jsonBtns[i].role === 'key-arrow-right') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = '→';
+        char = jsonBtns[i].labelEn;
         break;
       }
     } else if (jsonBtns[i].role === 'key-arrow-left') {
       if (jsonBtns[i].keyCode === buttonCode) {
-        char = '←';
+        char = jsonBtns[i].labelEn;
         break;
       }
     }
