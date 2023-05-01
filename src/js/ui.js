@@ -118,8 +118,19 @@ class PageStructure {
 
   initialiseKeyboard() {
     document.addEventListener('keydown', (event) => {
+      console.log(event.keyCode);
       event.preventDefault();
+      console.log(event.getModifierState('CapsLock'));
+      if (event.keyCode === 20) {
+        this.changeCapsLock();
+      }
       addCharToTextArea(event.keyCode);
+    });
+    document.addEventListener('keyup', (event) => {
+      event.preventDefault();
+      if (event.keyCode === 20) {
+        this.changeCapsLock();
+      }
     });
   }
 
