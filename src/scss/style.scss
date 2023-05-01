@@ -1,0 +1,203 @@
+@import "./normalize";
+@import "./base";
+@import "./variables";
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.header {
+  font-family: "Caveat", "Courier New", Courier, monospace;
+  font-size: 24px;
+  height: 10vh;
+}
+.main {
+  height: 85vh;
+  @include flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: darken($color-white, 7.5%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  &__textarea {
+    resize: none;
+    padding: 5px;
+    height: 200px;
+    width: 980px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px $color-light-blue;
+    font-family: "Roboto", "Courier New", Courier, monospace;
+    font-size: 24px;
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px $color-light-blue;
+    }
+  }
+}
+
+.header,
+.main,
+.footer {
+  width: 100%;
+}
+
+.header,
+.footer {
+  background-color: $color-light-blue;
+  @include flex;
+}
+.footer {
+  height: 5vh;
+  &__info {
+    font-family: "Nunito", "Courier New", Courier, monospace;
+  }
+}
+
+button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-rows: repeat(4, 60px) repeat(2, 27.5px);
+  grid-template-columns: repeat(15, 60px);
+  padding: 10px;
+  border: solid 1px $color-black;
+  background-color: $color-light-gray;
+  gap: 5px;
+  &__btn {
+    &__backspace {
+      grid-column-start: 14;
+      grid-column-end: span 2;
+      grid-row-start: 1;
+      grid-row-end: span 1;
+    }
+    &__tab {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 2;
+      grid-row-end: span 1;
+    }
+    &__enter {
+      grid-column-start: 15;
+      grid-column-end: span 1;
+      grid-row-start: 2;
+      grid-row-end: span 2;
+    }
+    &__capslock {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 3;
+      grid-row-end: span 1;
+    }
+    &__shift-left {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 4;
+      grid-row-end: span 1;
+    }
+    &__shift-right {
+      grid-column-start: 13;
+      grid-column-end: span 3;
+      grid-row-start: 4;
+      grid-row-end: span 1;
+    }
+    &__fn {
+      grid-column-start: 1;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__control-left {
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__option-left {
+      grid-column-start: 3;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__command-left {
+      grid-column-start: 4;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__space {
+      grid-column-start: 5;
+      grid-column-end: span 6;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__command-right {
+      grid-column-start: 11;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__option-right {
+      grid-column-start: 12;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 2;
+    }
+    &__key-arrow-up {
+      grid-column-start: 14;
+      grid-column-end: span 1;
+      grid-row-start: 5;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-left {
+      grid-column-start: 13;
+      grid-column-end: span 1;
+      grid-row-start: 6;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-down {
+      grid-column-start: 14;
+      grid-column-end: span 1;
+      grid-row-start: 6;
+      grid-row-end: span 1;
+    }
+    &__key-arrow-right {
+      grid-column-start: 15;
+      grid-column-end: span 1;
+      grid-row-start: 6;
+      grid-row-end: span 1;
+    }
+  }
+}
+
+button {
+  transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  color: $color-white;
+  background-color: lighten($color-black, 12.5%);
+  border: none;
+  cursor: pointer;
+  &:active {
+    border: 2px solid $color-light-green;
+    transform: translateY(3px);
+    transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+  }
+  &:hover {
+    background-color: lighten($color-black, 25%);
+  }
+}
+
+.active {
+  border: 2px solid $color-light-green;
+  transform: translateY(3px);
+  transition: cubic-bezier(0.23, 0.94, 0.57, 0.89) 1s;
+}
+
+.main__info-block {
+  width: 900px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
