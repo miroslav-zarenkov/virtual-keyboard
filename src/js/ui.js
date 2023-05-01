@@ -19,7 +19,7 @@ class PageStructure {
     this.header.classList.add('header');
     const headerTitle = document.createElement('h1');
     headerTitle.classList.add('header__title');
-    headerTitle.textContent = 'Virtual Keyboard';
+    headerTitle.textContent = 'RSS Virtual Keyboard';
     this.header.appendChild(headerTitle);
     return this.header;
   }
