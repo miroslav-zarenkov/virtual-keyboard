@@ -69,17 +69,28 @@ export function addCharToTextArea(key = this.value) {
 
 export function backspace() {
   const textArea = document.querySelector('textarea');
-  const cursorPosition = textArea.selectionStart;
-  const beforeCursor = textArea.value.substring(0, cursorPosition);
-  const afterCursor = textArea.value.substring(cursorPosition);
-  if (beforeCursor === '') {
+  const cursorPositionStart = textArea.selectionStart;
+  const cursorPositionEnd = textArea.selectionEnd;
+  if (cursorPositionStart === cursorPositionEnd) {
+    const beforeCursor = textArea.value.substring(0, cursorPositionStart);
+    const afterCursor = textArea.value.substring(cursorPositionStart);
+    if (beforeCursor === '') {
+      textArea.focus();
+      return;
+    }
+    textArea.value = beforeCursor.slice(0, -1) + afterCursor;
+    const newCursorPosition = cursorPositionStart - 1;
+    textArea.setSelectionRange(newCursorPosition, newCursorPosition);
     textArea.focus();
-    return;
+  } else {
+    const { value } = textArea;
+    const cursorPosition = textArea.selectionStart;
+    const newValue = value.substring(0, cursorPositionStart) + value.substring(cursorPositionEnd);
+    textArea.value = newValue;
+    const newCursorPosition = cursorPosition;
+    textArea.setSelectionRange(newCursorPosition, newCursorPosition);
+    textArea.focus();
   }
-  textArea.value = beforeCursor.slice(0, -1) + afterCursor;
-  const newCursorPosition = cursorPosition - 1;
-  textArea.setSelectionRange(newCursorPosition, newCursorPosition);
-  textArea.focus();
 }
 
 export function shift() {
