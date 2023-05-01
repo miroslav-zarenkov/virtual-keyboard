@@ -49,22 +49,10 @@ export function addCharToTextArea(key = this.value) {
         char = '\t';
         break;
       }
-    } else if (jsonBtns[i].role === 'key-arrow-up') {
-      if (jsonBtns[i].keyCode === buttonCode) {
-        char = jsonBtns[i].labelEn;
-        break;
-      }
-    } else if (jsonBtns[i].role === 'key-arrow-down') {
-      if (jsonBtns[i].keyCode === buttonCode) {
-        char = jsonBtns[i].labelEn;
-        break;
-      }
-    } else if (jsonBtns[i].role === 'key-arrow-right') {
-      if (jsonBtns[i].keyCode === buttonCode) {
-        char = jsonBtns[i].labelEn;
-        break;
-      }
-    } else if (jsonBtns[i].role === 'key-arrow-left') {
+    } else if (jsonBtns[i].role === 'key-arrow-up'
+              || jsonBtns[i].role === 'key-arrow-down'
+              || jsonBtns[i].role === 'key-arrow-right'
+              || jsonBtns[i].role === 'key-arrow-left') {
       if (jsonBtns[i].keyCode === buttonCode) {
         char = jsonBtns[i].labelEn;
         break;
