@@ -127,6 +127,9 @@ class PageStructure {
       if (event.keyCode === 8) {
         backspace();
       }
+      if (event.altKey && event.ctrlKey) {
+        this.changeKeyboardLanguage();
+      }
       addCharToTextArea(event.keyCode);
     });
     document.addEventListener('keyup', (event) => {
